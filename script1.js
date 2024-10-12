@@ -2,7 +2,7 @@ import { load } from 'cheerio';
 import got from 'got';
 import fs from 'fs';
 import sequelize from './db.js';
-import ParsedData from './models/ParsedData.js';
+import ParsedData from './models/autoMskParsed.js';
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -35,7 +35,6 @@ const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
         parsedData.push({
           title,
           price,
-          source: url,
         });
       });
 
